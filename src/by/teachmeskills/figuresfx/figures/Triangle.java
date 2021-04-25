@@ -1,16 +1,13 @@
 package by.teachmeskills.figuresfx.figures;
 
-import by.teachmeskills.figuresfx.controller.MainScreenViewController;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 import java.util.Arrays;
-import java.util.logging.Logger;
 
 public class Triangle extends Figure {
-    private double [] xPoint;
-    private  double [] yPoint;
-
+    private double[] xPoint;
+    private double[] yPoint;
 
     public double[] getxPoint() {
         return xPoint;
@@ -34,12 +31,11 @@ public class Triangle extends Figure {
         this.yPoint = yPoint;
     }
 
-
     @Override
     public void draw(GraphicsContext graphicsContext) {
         graphicsContext.setLineWidth(lineWidth);
         graphicsContext.setStroke(color);
-        graphicsContext.strokePolygon(xPoint,yPoint,3);
+        graphicsContext.strokePolygon(xPoint, yPoint, 3);
     }
 
     @Override
@@ -59,7 +55,7 @@ public class Triangle extends Figure {
 
     @Override
     public String toString() {
-        return "Triangle{" +
+        return "{" +
                 "cx=" + cx +
                 ", cy=" + cy +
                 ", lineWidth=" + lineWidth +

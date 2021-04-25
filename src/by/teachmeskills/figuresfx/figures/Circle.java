@@ -45,7 +45,7 @@ public class Circle extends Figure {
 
     @Override
     public String toString() {
-        return "Circle{" +
+        return "{" +
                 "radius=" + radius +
                 ", cx=" + cx +
                 ", cy=" + cy +

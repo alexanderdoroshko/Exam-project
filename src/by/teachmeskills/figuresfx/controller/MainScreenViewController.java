@@ -36,21 +36,24 @@ public class MainScreenViewController implements Initializable {
 
     private Figure createFigure(double x, double y) throws FigureException {
         Figure figure = null;
-        logger.info("Method createFigure started");
         switch (random.nextInt(5)) {
             case Figure.FIGURE_TYPE_CIRCLE:
                 figure = new Circle(x, y, random.nextInt(3), Color.GREEN, random.nextInt(50));
+                logger.info("Circle created: " + figure.toString());
                 break;
             case Figure.FIGURE_TYPE_RECTANGLE:
                 figure = new Rectangle(x, y, random.nextInt(3), Color.AQUA, random.nextInt(60), random.nextInt(100));
+                logger.info("Rectangle created: " + figure.toString());
                 break;
             case Figure.FIGURE_TYPE_TRIANGLE:
                 figure = new Triangle(x, y, random.nextInt(3), Color.BLACK,
                         new double[]{random.nextInt(100) + x, x - random.nextInt(100), x},
                         new double[]{random.nextInt(100) + y, y - random.nextInt(100), y - random.nextInt(70)});
+                logger.info("Triangle created: " + figure.toString());
                 break;
             case Figure.FIGURE_TYPE_OVAL:
                 figure = new Oval(x, y, random.nextInt(3), Color.CORAL, random.nextInt(100), random.nextInt(100));
+                logger.info("Oval created: " + figure.toString());
                 break;
             default:
                 throw new FigureException("Unknown figure type!");
@@ -67,12 +70,12 @@ public class MainScreenViewController implements Initializable {
     }
 
     @FXML
-    private void onMousedClicked(MouseEvent mouseEvent)  {
+    private void onMousedClicked(MouseEvent mouseEvent) {
         logger.info("Method onMousedClicked started");
         try {
             addFigure(createFigure(mouseEvent.getX(), mouseEvent.getY()));
         } catch (FigureException e) {
-            logger.error("Unknown type figure",e);
+            logger.error("Unknown type figure", e);
         }
         repaint();
     }

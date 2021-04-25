@@ -37,7 +37,7 @@ public class Oval extends Figure {
 
     @Override
     public String toString() {
-        return "Oval{" +
+        return "{" +
                 "cx=" + cx +
                 ", cy=" + cy +
                 ", lineWidth=" + lineWidth +

@@ -10,10 +10,10 @@ public class Rectangle extends Figure {
     private double width;
     private double height;
 
-    public Rectangle( double cx, double cy, double lineWidth, Color color, double width, double height) {
+    public Rectangle(double cx, double cy, double lineWidth, Color color, double width, double height) {
         super(FIGURE_TYPE_RECTANGLE, cx, cy, lineWidth, color);
         this.width = width < 30 ? 30 : width;
-        this.height = height <30 ? 30 : height;
+        this.height = height < 30 ? 30 : height;
     }
 
     public double getWidth() {
@@ -54,7 +54,7 @@ public class Rectangle extends Figure {
 
     @Override
     public String toString() {
-        return "Rectangle{" +
+        return "{" +
                 "cx=" + cx +
                 ", cy=" + cy +
                 ", lineWidth=" + lineWidth +
